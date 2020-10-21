@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfgantt}
+
+
+\title{Timeline}
+\author{Maxwell Omwenga}
+\date{October 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\begin{figure}[ht]
+\vspace*{-0.15cm}
+\begin{center}
+\begin{ganttchart}[vgrid ,hgrid, x unit=16mm,
+inline,
+bar/.append style={fill=lightgray, rounded corners=3pt},
+milestone inline label node/.append style={left=6mm},
+milestone/.append style={fill=orange}]{1}{10}
+
+% 
+\gantttitle{2020}{5} 
+\gantttitle{2021}{5}\\
+% 
+\gantttitlelist{8,...,12}{1}
+\gantttitlelist{1,...,5}{1}\\
+% 
+% Milestones
+\ganttmilestone{1}{4}
+\ganttmilestone{2}{5} 
+\ganttmilestone{3}{6}
+\ganttmilestone{4}{7} 
+\ganttmilestone{5}{9} 
+\ganttnewline
+% 
+\ganttgroup{Group 1}{1}{4} \\
+\ganttbar{Task 1: Journal Paper}{1}{3} \\
+% \ganttbar{Define the equations' parameters}{1}{3} \\
+\ganttlinkedbar{Task 2: Dissertation Draft}{3}{5} \ganttnewline
+% \ganttlinkedbar{Develop the equations}{2}{3} %\ganttnewline
+% \ganttmilestone{--M1}{4} \ganttnewline
+% 
+% \ganttmymilestone{New milestone}{3} \ganttnewline
+% \ganttbar{Final Task}{3}{3}\\
+%Second Group 2
+\ganttgroup{Group 2}{3}{5} \\
+\ganttbar{Task 3: Review with advisor}{3}{5} \\
+% \ganttbar{Develop the algorithm/s}{3}{4} \\
+\ganttlinkedbar{Task 4}{4}{5} \ganttnewline
+% \ganttlinkedbar{Design the scenarios}{4}{5} %\ganttnewline
+% \ganttmilestone{--M2--}{6} \ganttnewline
+% \ganttmymilestone{New milestone}{7} \ganttnewline
+% \ganttbar{Final Task}{6}{6}
+% 
+\ganttgroup{Group 3}{4}{6} \\
+\ganttbar{Task 5}{4}{6} \\
+% \ganttbar{Verification \& Tuning parameters}{4}{7} \\
+ \ganttlinkedbar{Task 6}{5}{6} \ganttnewline
+% \ganttlinkedbar{Collecting results}{8}{8} \ganttnewline
+% \ganttmilestone{--M3--}{8} \ganttnewline
+% \ganttmymilestone{New milestone}{7} \ganttnewline
+% 
+\ganttgroup{Group 4}{2}{8}\\
+\ganttbar{Task 7}{2}{6} \ganttnewline
+\ganttlinkedbar{Task 8}{6}{7} \ganttnewline
+\ganttlinkedbar{Task 9}{8}{9} \ganttnewline
+% \ganttmilestone{--M4--}{9} \ganttnewline
+% 
+% Relations
+\ganttlink{elem7}{elem9}
+\ganttlink{elem13}{elem15}
+% \ganttlink{elem8}{elem9}
+% \ganttlink{elem9}{elem11}
+% \ganttlink{elem11}{elem12}
+% \ganttlink{elem12}{elem14}
+\end{ganttchart}
+\end{center}
+\vspace*{-0.55cm}
+\caption{Gantt Chart}
+\end{figure}
+
+\end{document}
